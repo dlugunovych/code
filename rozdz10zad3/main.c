@@ -4,7 +4,7 @@ int BiggestValue (int tArray[], int dSizeOfArray);
 
 int main()
 {
-    int tSourceArray[5] = {1,20,3,9,2};
+    int tSourceArray[5] = {1,20,3,9,32};
     printf("%d", BiggestValue(tSourceArray, 5));
     return 0;
 }
@@ -12,12 +12,14 @@ int main()
 int BiggestValue (int tArray[], int dSizeOfArray)
 {
    int dBiggestDigit = 0;
+   int temp;
    for (int i = 0; i < dSizeOfArray; i++)
    {
       if (tArray[i]>dBiggestDigit)
       {
          dBiggestDigit = tArray[i];
+         temp = i;
       }
    }
-   return dBiggestDigit;
+   return temp+1;
 }
